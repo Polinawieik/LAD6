@@ -85,21 +85,131 @@
 //Console.WriteLine($"Срок вклада:{t} лет ({yearstar}-{yearsend})");
 //Console.WriteLine($"Состояние счета:{A:N2}");
 
+//try
+//{
+//    double balance = 24;
+//    double rate = 0.06;
+//    int yearstar = 1826;
+//    int yearend = 2026;
+//    for (int year= yearstar;year<= yearend;year++)
+//    {
+//        balance = balance + balance * rate;
+//    }
+//    Console.WriteLine($"Состояние счета:{balance:F2}");
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine(ex.Message);
+//}
+////Базовый уровень
+
+using System.Runtime.CompilerServices;
+
+int[] mas1 = new int[5];
+int[] mas2 = { 1, 4, 2, 9, 3 };
+//int[] mas3 = mas2;
+//mas3[3] = 12;
+//Console.WriteLine(mas3[3]);
+//Console.WriteLine(mas2[3]);
+
+//ввод вручную
+//int[] mas4 = new int[5];
+//for (int i = 0; i < mas4.Length; i++)
+//    mas4 [i] = int.Parse(Console.ReadLine());
+//for (int i = 0;i<mas4.Length;i++)
+//    Console.Write($"{mas4[i]}");
+////ввод по формуле
+//int[] mas5 = new int[5];
+//for (int i = 0; i < mas5.Length; i++)
+//{
+//    mas5[i] = 2 * i + 1;
+//    Console.Write($"{mas5[i]}");
+//}
+//Console.WriteLine();
+
+//задание
+//int[] mas= new int[10];
+//Random rnd= new Random();
+//for (int i = 0; i < mas.Length; i++) ;
+//{
+//    mas[i] = rnd.Next(-7,8);
+//    Console.Write($"{mas[i]}");
+//}
+//Console.WriteLine();
+//Console.Write("Введите n:");
+//int n =int.Parse(Console.ReadLine());
+//int index = -1;
+//int= less_n = 0;
+//for (int i = 0;i <mas.Length; i++)
+//{
+//    if (mas[i] == n) index = i;
+//    if (mas[i] < n) ++;
+
+//}
+
+//задание 2
+
+
+//отсортировать элементы массива по возрастанию
+//Random rnd=new Random();
+//int[] mas= new int[rnd];
+
+////C
+//try
+//{
+//    Console.Write()
+//}
+//try
+//{
+//    Console.Write("Введите размер массива:");
+//    int n = int.Parse(Console.ReadLine());
+//    int[] mas = new int[n];
+//    Random rnd = new int[n];
+
+
+//}
+
+//Первая
+//string? text = "Sam";
+//string name = text ?? "Tom";
+//Console.WriteLine(name);
+
+//int? id = null;
+//int personId = id ?? 1;
+//Console.WriteLine(personId);
+
+//Random random = new Random();
+//int n = random.Next(5, 11);
+//for (int i = 0; i < n; i++)
+
+
 try
 {
-    double balance = 24;
-    double rate = 0.06;
-    int yearstar = 1826;
-    int yearend = 2026;
-    for (int year= yearstar;year<= yearend;year++)
+    Random random = new Random();
+string[] mas = new string[5];
+Console.Write("Массив: ");
+for (int i = 0; i < mas.Length; i++)
+{
+    mas[i] = Convert.ToString(random.Next(10, 100), 2);
+    Console.Write($"{mas[i]}   ");
+}
+Console.WriteLine();
+string D = Convert.ToString(random.Next(10, 100), 2);
+Console.WriteLine($"Заданное двоичное число D: {D}");
+int decimalD = Convert.ToInt32(D, 2);
+int index = 0;
+for (int i = 1; i < mas.Length; i++)
+{
+    int currentVal = Convert.ToInt32(mas[i], 2);
+    int maxVal = Convert.ToInt32(mas[index], 2);
+    if (Math.Abs(currentVal - decimalD) > Math.Abs(maxVal - decimalD))
     {
-        balance = balance + balance * rate;
+        index = i;
     }
-    Console.WriteLine($"Состояние счета:{balance:F2}");
+}
+Console.WriteLine($"Наиболее удаленное значение: {mas[index]}; его индекс: {index}");
 }
 catch (Exception ex)
 {
     Console.WriteLine(ex.Message);
 }
-//Базовый уровень
-
